@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A2F6AD129BD218D00772A56 /* MovieViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A2F6AD029BD218D00772A56 /* MovieViewModel.swift */; };
 		3AF1634429B8C27A004597F9 /* MovieBookApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1634329B8C27A004597F9 /* MovieBookApp.swift */; };
 		3AF1634629B8C27A004597F9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AF1634529B8C27A004597F9 /* ContentView.swift */; };
 		3AF1634829B8C27B004597F9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AF1634729B8C27B004597F9 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A2F6AD029BD218D00772A56 /* MovieViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieViewModel.swift; sourceTree = "<group>"; };
 		3AF1634029B8C27A004597F9 /* MovieBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3AF1634329B8C27A004597F9 /* MovieBookApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieBookApp.swift; sourceTree = "<group>"; };
 		3AF1634529B8C27A004597F9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 		3AF1635729B9ECCD004597F9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				3A2F6AD029BD218D00772A56 /* MovieViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AF1634629B8C27A004597F9 /* ContentView.swift in Sources */,
+				3A2F6AD129BD218D00772A56 /* MovieViewModel.swift in Sources */,
 				3AF1634429B8C27A004597F9 /* MovieBookApp.swift in Sources */,
 				3AF1635329B9E9A4004597F9 /* Movie.swift in Sources */,
 				3AF1635C29B9F1EC004597F9 /* DownloaderClient.swift in Sources */,

@@ -13,12 +13,14 @@ class MovieListViewModel: ObservableObject {
     @Published var movies = [MovieViewModel]()
     
     let downloaderClient = DownloaderClient()
+    
     func movieSearch(movieName: String) {
+        
         downloaderClient.downloadMovies(search: movieName) { (sonuc) in
             switch sonuc {
-            case.failure(let error):
+            case .failure(let error):
                 print(error)
-            case.success(let movieArray):
+            case .success(let movieArray):
                 if let movieArray = movieArray {
                     DispatchQueue.main.async {
                         self.movies = movieArray.map(MovieViewModel.init)
@@ -45,5 +47,8 @@ struct MovieViewModel {
     var imdbID: String {
         movie.imdbID
     }
+//    var imdbRating: String {
+//        movie.imdbRating
+//    }
     
 }

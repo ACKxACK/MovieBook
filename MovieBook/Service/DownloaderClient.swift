@@ -29,6 +29,26 @@ class DownloaderClient {
         }.resume()
         
     }
+    
+    func downloadMovieDetail(imdbID: String, completion: @escaping (Result<MovieDetail, DownloaderError>) -> Void) {
+        guard let url = URL(string: "https://www.omdbapi.com/?i=\(imdbID)&apikey=5ab52e8b") else {
+            return completion(.failure(.wrongUrl))
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data, error == nil else {
+                return completion(.failure(.dataNotCome))
+            }
+            
+            guard let incomeMovieDetail = try? JSONDecoder().decode(MovieDetail.self, from: data) else {
+                return completion(.failure(.dataNotProcess))
+            }
+            
+            completion(.success(incomeMovieDetail))
+            
+        }.resume()
+        
+    }
 
 }
 

@@ -6,10 +6,11 @@
 //
 
 import Foundation
+import SwiftUI
 
-class MovieListViewModel {
+class MovieListViewModel: ObservableObject {
     
-    var movies = [Movie]()
+    @Published var movies = [MovieViewModel]()
     
     let downloaderClient = DownloaderClient()
     func movieSearch(movieName: String) {
@@ -19,9 +20,30 @@ class MovieListViewModel {
                 print(error)
             case.success(let movieArray):
                 if let movieArray = movieArray {
-                    self.movies = movieArray
+                    DispatchQueue.main.async {
+                        self.movies = movieArray.map(MovieViewModel.init)
+                    }
                 }
             }
         }
     }
+}
+
+struct MovieViewModel {
+    
+    let movie : Movie
+    
+    var title: String {
+        movie.title
+    }
+    var poster: String {
+        movie.poster
+    }
+    var year: String {
+        movie.year
+    }
+    var imdbID: String {
+        movie.imdbID
+    }
+    
 }
